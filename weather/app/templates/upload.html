@@ -1,0 +1,20 @@
+
+<style>
+    img{
+        width: 30rem; height:25rem;
+    }
+</style>
+
+<form action="" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <input type="file" name="images" multiple id="">
+    <button type="submit" class="btn btn-primary">Upload</button>
+</form>
+
+
+
+{% for img in images  %}
+    <img src="{{ img.images.url }}" alt="Image">
+{% endfor %}
+    
+
